@@ -17,12 +17,509 @@
                     center: {lat:34.0522, lng:-118.2437},
                 });
 
-                const marker = new google.maps.Marker({
-                    position: {lat:34.0522, lng:-118.2437},
-                    map: map,
-                });
+
+                for (i = 0; i < 47; i++) {
+                    const marker = new google.maps.Marker({
+                        position: new google.maps.LatLng(info[i][0][0],info[i][0][1]),
+                        map: map,
+                    });
+
+                    const contentString = `
+                    <ul id="cart">
+                        <li>${info[i][1]}</li>
+                        <li>${info[i][2]}</li>
+                        <li>${info[i][3]}</li>
+                        <li>${info[i][4]}</li>
+                    </ul> `
+
+                    const infowindow = new google.maps.InfoWindow({
+                        content: contentString,
+                        ariaLabel: info[i][1],
+                    });
+
+                    marker.addListener("click", () => {
+                        infowindow.open({
+                        anchor: marker,
+                        map,
+                        });
+                    });
+                }
+
             }
             window.initMap = initMap;
+
+            const info = {
+                "0": [
+                    [
+                        37.7416488,
+                        -122.20119472796966
+                    ],
+                    "Alameda County Community Food Bank",
+                    "7900 Edgewater Drive, Oakland, CA 94621",
+                    "https://www.accfb.org",
+                    "(510)635-3663"
+                ],
+                "1": [
+                    [
+                        38.375882950000005,
+                        -120.79955052147368
+                    ],
+                    "Interfaith Council of Amador",
+                    "12181 Airport Road, Jackson, CA 95642",
+                    "https://www.feedamador.org",
+                    "(209)267-9006"
+                ],
+                "2": [
+                    [
+                        39.76467842857143,
+                        -121.86702171428571
+                    ],
+                    "Community Action Agency of Butte County  North State Food Bank",
+                    "181 E. Shasta Avenue, Chico, CA 95973",
+                    "https://www.buttecaa.com/north-state-food-bank",
+                    "(530)712-2600"
+                ],
+                "3": [
+                    [
+                        38.19049477902025,
+                        -120.67474013718243
+                    ],
+                    "The Resource Connection Food Bank",
+                    "444 E. St. Charles St., San Andreas, CA 95249",
+                    "https://trcac.org/the-food-bank",
+                    "(209)754-1257"
+                ],
+                "4": [
+                    [
+                        39.76467842857143,
+                        -121.86702171428571
+                    ],
+                    "Community Action Agency of Butte County  North State Food Bank",
+                    "181 E. Shasta Avenue, Chico, CA 95973",
+                    "https://www.buttecaa.com/north-state-food-bank",
+                    "(530)712-2600"
+                ],
+                "5": [
+                    [
+                        39.76467842857143,
+                        -121.86702171428571
+                    ],
+                    "Community Action Agency of Butte County  North State Food Bank",
+                    "181 E. Shasta Avenue, Chico, CA 95973",
+                    "https://www.buttecaa.com/north-state-food-bank",
+                    "(530)712-2600"
+                ],
+                "6": [
+                    [
+                        40.7888577193318,
+                        -124.18004833650309
+                    ],
+                    "Food for People",
+                    "2112 Broadway St, Eureka, CA 95501",
+                    "https://www.foodforpeople.org",
+                    "(707)445-3166"
+                ],
+                "7": [
+                    [
+                        32.825517,
+                        -115.57821035714286
+                    ],
+                    "Imperial Valley Food Bank",
+                    "486 W Aten Rd, Imperial, CA 92251",
+                    "http://www.ivfoodbank.com",
+                    "(760)370-0966"
+                ],
+                "8": [
+                    [
+                        37.358721153846155,
+                        -118.3941823076923
+                    ],
+                    "Inyo Mono Advocates for Community Action (IMACA)",
+                    "137 E South St, Bishop, CA 93514",
+                    "https://www.imaca.net",
+                    "(760)873-8557"
+                ],
+                "9": [
+                    [
+                        35.36124745235386,
+                        -119.05820970370478
+                    ],
+                    "Community Action Partnership of Kern",
+                    "5005 Business Park North, Bakersfield, CA 93309",
+                    "http://www.capk.org",
+                    "(661)398-4520"
+                ],
+                "10": [
+                    [
+                        36.33550836717187,
+                        -119.65497397687587
+                    ],
+                    "Kings Community Action Organization",
+                    "1130 N. 11th Ave., Hanford, CA 93230",
+                    "https://www.kcao.org",
+                    "(559)582-4386"
+                ],
+                "11": [
+                    [
+                        34.00797331313131,
+                        -118.2422964040404
+                    ],
+                    "Los Angeles Regional Food Bank",
+                    "1734 East 41st St, Los Angeles, CA 90058",
+                    "https://www.lafoodbank.org",
+                    "(323)234-3030"
+                ],
+                "12": [
+                    [
+                        34.0252623,
+                        -118.4728412
+                    ],
+                    "Westside Food Bank",
+                    "1710 22nd St., Santa Monica, CA 90404",
+                    "http://www.westsidefoodbankca.org",
+                    "(310)828-6016"
+                ],
+                "13": [
+                    [
+                        36.952423340512134,
+                        -120.07387454236384
+                    ],
+                    "Madera County Food Bank",
+                    "225 S. Pine Street, Madera, CA 93637",
+                    "https://www.maderafoodbank.com",
+                    "(559)674-1482"
+                ],
+                "14": [
+                    [
+                        37.95067759012984,
+                        -122.49285400879577
+                    ],
+                    "SF-Marin Food Bank",
+                    "2550 Kerner Boulevard, San Rafael, CA 94901",
+                    "https://www.sfmfoodbank.org",
+                    "(415)282-1900"
+                ],
+                "15": [
+                    [
+                        37.3185086,
+                        -120.50329438754778
+                    ],
+                    "Merced County Food Bank",
+                    "2000 W Olive Ave., Merced, CA 95348",
+                    "https://mmcfb.org",
+                    "(209)726-3663"
+                ],
+                "16": [
+                    [
+                        39.45203128593391,
+                        -123.80439596984351
+                    ],
+                    "Mendocino Food & Nutrition Program  The Fort Bragg Food Bank",
+                    "910 N Franklin Street, Fort Bragg, CA 95437",
+                    "http://www.fortbraggfoodbank.org",
+                    "(707)964-9404"
+                ],
+                "17": [
+                    [
+                        37.3185086,
+                        -120.50329438754778
+                    ],
+                    "Merced County Food Bank",
+                    "2000 W Olive Ave., Merced, CA 95348",
+                    "https://mmcfb.org",
+                    "(209)726-3663"
+                ],
+                "18": [
+                    [
+                        37.3595126,
+                        -118.3934409
+                    ],
+                    "Inyo Mono Advocates for Community Action (IMACA)",
+                    "180 Clarke St., Bishop, CA 93514",
+                    "https://www.imaca.net",
+                    "(760)873-8557"
+                ],
+                "19": [
+                    [
+                        36.684899724696635,
+                        -121.66463820785353
+                    ],
+                    "Food Bank for Monterey County",
+                    "353 W Rossi St., Salinas, CA 93907",
+                    "https://www.foodbankformontereycounty.org",
+                    "(831)758-1523"
+                ],
+                "20": [
+                    [
+                        38.287675,
+                        -122.305632
+                    ],
+                    "Community Action of Napa Valley Food Bank",
+                    "2521 Old Sonoma Rd., Napa, CA 94558",
+                    "http://canv.org",
+                    "(707)253-6128"
+                ],
+                "21": [
+                    [
+                        33.78965057573985,
+                        -118.00581211178837
+                    ],
+                    "Orange County Food Bank",
+                    "11870 Monarch Street, Garden Grove, CA 92841",
+                    "https://ocfoodbank.org",
+                    "(714)897-6670"
+                ],
+                "22": [
+                    [
+                        33.6618737,
+                        -117.73824747135329
+                    ],
+                    "Second Harvest Food Bank Orange County",
+                    "8014 Marine Way, Irvine, CA 92618",
+                    "https://www.feedoc.org",
+                    "(949)653-2900"
+                ],
+                "23": [
+                    [
+                        38.7804257278286,
+                        -121.30672983703018
+                    ],
+                    "Placer Food Bank",
+                    "8284 Industrial Ave., Roseville, CA 95678",
+                    "http://placerfoodbank.org",
+                    "(916)783-0481"
+                ],
+                "24": [
+                    [
+                        39.76467842857143,
+                        -121.86702171428571
+                    ],
+                    "Community Action Agency of Butte County  North State Food Bank",
+                    "181 E. Shasta Avenue, Chico, CA 95973",
+                    "https://www.buttecaa.com/north-state-food-bank",
+                    "(530)712-2600"
+                ],
+                "25": [
+                    [
+                        33.925306,
+                        -117.40851460298458
+                    ],
+                    "Feeding America Riverside San Bernardino",
+                    "2950 Jefferson Street, Riverside, CA  92504",
+                    "https://www.feedingamericaie.org",
+                    "(951)359-4757"
+                ],
+                "26": [
+                    [
+                        33.71773428531993,
+                        -116.20606809171483
+                    ],
+                    "FIND  Food In Need of Distribution",
+                    "83775 Citrus Ave, Indio, CA 92201",
+                    "http://www.findfoodbank.org",
+                    "(760)775-3663"
+                ],
+                "27": [
+                    [
+                        38.64716755102041,
+                        -121.42105123469388
+                    ],
+                    "Sacramento Food Bank and Family Services",
+                    "1951 Bell Avenue, Sacramento, CA 95838",
+                    "https://www.sacramentofoodbank.org",
+                    "(916)456-1980"
+                ],
+                "28": [
+                    [
+                        36.8725285317933,
+                        -121.40081522415193
+                    ],
+                    "Community Food Bank of San Benito County",
+                    "1133 San Felipe Road, Hollister, CA 95023",
+                    "https://communityfoodbankofsbc.org",
+                    "(831)637-0340"
+                ],
+                "29": [
+                    [
+                        34.08911249523818,
+                        -117.25984609111705
+                    ],
+                    "Community Action Partnership of San Bernardino County",
+                    "696 S. Tippecanoe Ave, San Bernardino, CA 92408-2607",
+                    "https://www.capsbc.org",
+                    "(909)723-1500"
+                ],
+                "30": [
+                    [
+                        33.925306,
+                        -117.40851460298458
+                    ],
+                    "Feeding America Riverside San Bernardino",
+                    "2950 Jefferson Street, Riverside, CA  92504",
+                    "https://www.feedingamericaie.org",
+                    "(951)359-4757"
+                ],
+                "31": [
+                    [
+                        32.887,
+                        -117.164231
+                    ],
+                    "The Jacobs & Cushman San Diego Food Bank",
+                    "9850 Distribution Avenue, San Diego, CA 92121-2320",
+                    "https://sandiegofoodbank.org",
+                    "(858)527-1419"
+                ],
+                "32": [
+                    [
+                        37.754397499999996,
+                        -122.39350960467618
+                    ],
+                    "SF-Marin Food Bank",
+                    "900 Pennsylvania Avenue, San Francisco, CA 94107",
+                    "https://www.sfmfoodbank.org",
+                    "(415)282-1900"
+                ],
+                "33": [
+                    [
+                        37.94533888870621,
+                        -121.28937712250537
+                    ],
+                    "Emergency Food Bank",
+                    "7 W. Scotts Avenue, Stockton, CA 95203",
+                    "http://www.stocktonfoodbank.org",
+                    "(209)464-7369"
+                ],
+                "34": [
+                    [
+                        37.78454237432599,
+                        -121.21088582440613
+                    ],
+                    "Second Harvest of the Greater Valley",
+                    "1220 Vanderbilt Cir., Manteca, CA 95337",
+                    "https://www.localfoodbank.org",
+                    "(209)239-2091"
+                ],
+                "35": [
+                    [
+                        35.2373267,
+                        -120.6318929
+                    ],
+                    "SLO Food Bank",
+                    "1180 Kendall Rd, San Luis Obispo, CA 93401",
+                    "https://www.slofoodbank.org",
+                    "(805)238-4664"
+                ],
+                "36": [
+                    [
+                        36.903226,
+                        -121.772939
+                    ],
+                    "Second Harvest Food Bank Santa Cruz County",
+                    "800 Ohlone Parkway, Watsonville, CA 95076",
+                    "https://www.thefoodbank.org",
+                    "(831)722-7110"
+                ],
+                "37": [
+                    [
+                        40.6169088,
+                        -122.3294861
+                    ],
+                    "Dignity Health Connected Living",
+                    "100 Mercy Oaks Dr, Redding, CA 96003",
+                    "https://www.dignityhealth.org/north-state/locations/connected-living/services/food-bank",
+                    "(530)226-3073"
+                ],
+                "38": [
+                    [
+                        39.76467842857143,
+                        -121.86702171428571
+                    ],
+                    "Community Action Agency of Butte County  North State Food Bank",
+                    "181 E. Shasta Avenue, Chico, CA 95973",
+                    "https://www.buttecaa.com/north-state-food-bank",
+                    "(530)712-2600"
+                ],
+                "39": [
+                    [
+                        41.421005,
+                        -122.381325
+                    ],
+                    "Great Northern Services",
+                    "310 Boles Street, Weed, CA 96094",
+                    "https://www.gnservices.org",
+                    "(530)938-4115"
+                ],
+                "40": [
+                    [
+                        38.51573504040404,
+                        -122.79321484848485
+                    ],
+                    "Redwood Empire Food Bank",
+                    "3990 Brickway Blvd., Santa Rosa, CA 95403",
+                    "https://refb.org",
+                    "(707)523-7900"
+                ],
+                "41": [
+                    [
+                        37.78454237432599,
+                        -121.21088582440613
+                    ],
+                    "Second Harvest of the Greater Valley",
+                    "1220 Vanderbilt Cir., Manteca, CA 95337",
+                    "https://www.localfoodbank.org",
+                    "(209)239-2091"
+                ],
+                "42": [
+                    [
+                        39.13720721770582,
+                        -121.62767006352932
+                    ],
+                    "Yuba-Sutter Food Bank",
+                    "760 Stafford Way, Yuba City, CA 95991",
+                    "https://feedingys.org/",
+                    "(530)673-3834"
+                ],
+                "43": [
+                    [
+                        39.76467842857143,
+                        -121.86702171428571
+                    ],
+                    "Community Action Agency of Butte County  North State Food Bank",
+                    "181 E. Shasta Avenue, Chico, CA 95973",
+                    "https://www.buttecaa.com/north-state-food-bank",
+                    "(530)712-2600"
+                ],
+                "44": [
+                    [
+                        36.293131,
+                        -119.1307739
+                    ],
+                    "FoodLink for Tulare County",
+                    "611 2nd Street, Exeter, CA 93221",
+                    "http://foodlinktc.org",
+                    "(559)651-3663"
+                ],
+                "45": [
+                    [
+                        38.68861475759978,
+                        -121.76064377096436
+                    ],
+                    "Yolo Food Bank",
+                    "233 Harter Ave, Woodland, CA 95776",
+                    "https://yolofoodbank.org",
+                    "(530)668-0690"
+                ],
+                "46": [
+                    [
+                        39.13720721770582,
+                        -121.62767006352932
+                    ],
+                    "Yuba-Sutter Food Bank",
+                    "760 Stafford Way, Yuba City, CA 95991",
+                    "https://feedingys.org/",
+                    "(530)673-3834"
+                ]
+            }
         </script>
 
         <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDb65OTLt7Y4SNBm4UCnbEpX38Znb77Slc&callback=initMap"></script>
